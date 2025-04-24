@@ -37,7 +37,7 @@ const App = () => {
 
   const addNote = async () => {
     if (note.trim() === '') return;
-    const res = await fetch('http://127.0.0.1:5000/notes', {
+    const res = await fetch('https://my-notes-app-kogc.onrender.com/notes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ content: note })
@@ -50,7 +50,7 @@ const App = () => {
   };
 
   const deleteNote = async (id) => {
-    await fetch(`http://127.0.0.1:5000/notes/${id}`, { method: 'DELETE' });
+    await fetch(`https://my-notes-app-kogc.onrender.com/notes/${id}`, { method: 'DELETE' });
     setNotes(notes.filter((n) => n.id !== id));
     setSnackbarMessage('Note deleted!');
     setSnackbarOpen(true);
