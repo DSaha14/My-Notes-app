@@ -26,7 +26,7 @@ const App = () => {
   const [snackbarMessage, setSnackbarMessage] = useState('');
 
   const fetchNotes = async () => {
-    const res = await fetch('http://127.0.0.1:5000/notes');
+    const res = await fetch('https://my-notes-app-kogc.onrender.com/notes');
     const data = await res.json();
     setNotes(data);
   };
